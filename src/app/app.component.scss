@@ -1,0 +1,50 @@
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  margin: 10px;
+}
+
+.right-column {
+  border-radius: 8px;
+  border: 1px solid #ececec;
+}
+
+.card, .summary {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  margin-bottom: 20px;
+  background: white;
+  display: flex;
+  align-items: baseline;
+}
+
+.summary {
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-right: 8px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+  }
