@@ -8,6 +8,8 @@ export enum DeviceType {
   Svantek307 = 'Svantek 307',
   CesvaTA120 = 'CESVA TA120',
   SPXOne = 'SPXOne',
+  Monitor7 = 'Pantalla 7"',
+  Monitor10 = 'Pantalla 10"',
   Monitor15 = 'Monitor Emma 15.6"',
   Monitor21 = 'Monitor Emma 21.2"',
   WifiBridge = 'Wifi Bridge',
@@ -34,6 +36,9 @@ export class Item {
         return 1.04 * this.quantity * days;
       case DeviceType.SPXOne:
         return 4.49 * this.quantity * days;
+      case DeviceType.Monitor7:
+      case DeviceType.Monitor10:
+        return 70 * this.quantity * Math.ceil(days / 7);
       case DeviceType.Monitor15:
         return 100 * this.quantity * Math.ceil(days / 7);
       case DeviceType.Monitor21:
@@ -52,7 +57,7 @@ export class Item {
       case DeviceType.Modem3G:
         const weeksModem = Math.ceil(days / 7);
         let totalCostModem = 0;
-        let weeklyCostModem = 50 * this.quantity;
+        let weeklyCostModem = 75 * this.quantity;
 
         for (let i = 0; i < weeksModem; i++) {
           totalCostModem += weeklyCostModem;

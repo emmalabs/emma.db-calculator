@@ -48,7 +48,7 @@ export class AppComponent {
   getTotalCost(): number {
     let total = this.items.reduce((total, item) => total + item.calculateCost(this.numberOfDays), 0);
     return total;
-}
+  }
 
   addItem(type: string): void {
     if (type === 'Device' && this.selectedDevice) {
@@ -76,7 +76,7 @@ export class AppComponent {
     if (type === 'Device') {
       return [DeviceType.CesvaTA120, DeviceType.Svantek307, DeviceType.SPXOne];
     } else if (type === 'Monitor') {
-      return [DeviceType.Monitor15, DeviceType.Monitor21];
+      return [DeviceType.Monitor7, DeviceType.Monitor10, DeviceType.Monitor15, DeviceType.Monitor21];
     } else if (type === 'Extras') {
       return [DeviceType.WifiBridge, DeviceType.Modem3G];
     }
