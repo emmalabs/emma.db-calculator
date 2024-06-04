@@ -20,7 +20,8 @@
   border: 1px solid #ececec;
 }
 
-.card, .summary {
+.card,
+.summary {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ececec;
@@ -46,5 +47,40 @@ mat-form-field {
 }
 
 .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+.mat-column-qty, .mat-column-price, .mat-column-total {
+  text-align: right;
+}
+
+.total-cost {
+  width: 100%;
+  text-align: right;
+  padding-top: 32px;
+}
+
+.mat-column-delete
+{
+  width: 50px;
+  text-align: center;
+}
+
+@media print {
+  .left-column {
+    display: none;
   }
+
+  .right-column {
+    border: 0;
+  }
+
+  .card,
+  .summary {
+    border: 0;
+  }
+
+  .mat-column-delete {
+    display: none;
+  }
+}

@@ -36,7 +36,7 @@ export class AppComponent {
   numberOfDays: number = 1;
   wifiRequired: boolean = false;
   modem3G: boolean = false;
-  displayedColumns: string[] = ['item', 'delete'];
+  displayedColumns: string[] = ['item', 'qty', 'price', 'delete'];
 
   selectedDevice: DeviceType | undefined;
   selectedMonitor: DeviceType | undefined;
@@ -64,7 +64,7 @@ export class AppComponent {
       this.selectedMonitor = undefined;
       this.monitorQuantity = 1;
     } else if (type === 'Extras' && this.selectedExtra) {
-      const item = new Item(ItemType.Monitor, this.selectedExtra, this.monitorQuantity);
+      const item = new Item(ItemType.Monitor, this.selectedExtra, this.extrasQuantity);
       this.items.push(item);
       this.items = [...this.items];
       this.selectedExtra = undefined;
@@ -74,11 +74,11 @@ export class AppComponent {
 
   getOptions(type: string): string[] {
     if (type === 'Device') {
-      return [DeviceType.CesvaTA120, DeviceType.Svantek307, DeviceType.SPXOne];
+      return [DeviceType.CesvaTA120, DeviceType.CesvaTA150, DeviceType.Svantek307, DeviceType.SPXOne];
     } else if (type === 'Monitor') {
       return [DeviceType.Monitor7, DeviceType.Monitor10, DeviceType.Monitor15, DeviceType.Monitor21];
     } else if (type === 'Extras') {
-      return [DeviceType.WifiBridge, DeviceType.Modem3G];
+      return [DeviceType.WifiBridge, DeviceType.Modem3G, DeviceType.HoresSuport, DeviceType.SolarSystem];
     }
     return [];
   }
